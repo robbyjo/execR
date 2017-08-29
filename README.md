@@ -48,7 +48,7 @@ execR app has a utility script in /data/utils.R primarily for parameter parsing.
 source("/data/utils.R");
 args <- processArgs(commandArgs(trailingOnly=TRUE));
 
-Variable args will be a list containing all the parameters (if specified), such as args$param_str.
+Variable args will be a named vector containing all the parameters (if specified), such as args['param_str'].
 
 
 ##Installed R packages
