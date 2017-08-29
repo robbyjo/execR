@@ -170,7 +170,7 @@ main() {
 
     echo '#!/bin/bash' > /data/runme.sh
     echo 'export MKL_NUM_THREADS=1' >> /data/runme.sh
-    echo 'pwd is:' >> /data/runme.sh
+    echo 'echo "pwd is:"' >> /data/runme.sh
     echo "pwd" >> /data/runme.sh
     if [[ "$prologue_shell" != "" ]] ; then
         echo "Running prologue shell..." >> /data/runme.sh
