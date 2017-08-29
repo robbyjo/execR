@@ -1,11 +1,11 @@
 # execR
 
-###Author: Roby Joehanes
+### Author: Roby Joehanes
 
-##Description
+## Description
 This is a DNANexus app that allows execution of any R scripts without specifically constructing it according to DNANexus app convention.
 
-##Basic Usage
+## Basic Usage
 You need to enter in the main R file or tar ball. In case of a tar ball (either .tar.gz or .tar.bz2), it will be extracted to
 /data directory with its directory structure intact. It is assumed that your main R file will be /data/main.R, which will
 be the entry point of your program. You can package several other R codes into the tar ball that you can later source in your main code.
@@ -28,7 +28,7 @@ Debug parameter: This app allows specification of debug parameter of integer typ
 that debug is disabled. Positive numbers mean increasing debug verbosity level. You can interpret the debug number any way you want.
 Debug parameter will be passed as --debug   
 
-##Prologue and epilogue shell scripts
+## Prologue and epilogue shell scripts
 Occasionally you may need a prologue to pre-process your data files or installing required R packages (and their required libraries).
 This app allows specification of prologue shell script. Please do remember that if you install any R packages or system libraries, they will be
 completely erased right after the app exits. So, they will need to be reinstalled in every run.
@@ -41,19 +41,21 @@ Please be mindful that cloud infrastructure is relatively bare bones. So, you ma
 libraries or programs come preinstalled.
 
  
-##Helper utility
+## Helper utility
 
 execR app has a utility script in /data/utils.R primarily for parameter parsing. To use in your R code, use the following:
 
+```R
 source("/data/utils.R");
 args <- processArgs(commandArgs(trailingOnly=TRUE));
+```
 
 Variable args will be a named vector containing all the parameters (if specified), such as args['param_str'].
 
 Please be mindful that your source tar ball does not overwrite utils.R utility. If you do, then this functionality will be absent.
 
 
-##Installed R packages
+## Installed R packages
 
 For the available R packages, check here:
 https://hub.docker.com/r/robbyjo/r-mkl-bioconductor/
