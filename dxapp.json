@@ -1,0 +1,158 @@
+{
+  "name": "execR",
+  "title": "execR",
+  "summary": "App to execute any R code.",
+  "tags": [
+    "Statistics"
+  ],
+  "dxapi": "1.0.0",
+  "version": "0.0.1",
+  "inputSpec": [
+    {
+      "name": "r_code",
+      "label": "Main R code",
+      "help": "Main R code. If you have multiple R codes that you source, put them into a tarball. This tarball will be extracted to /data directory and you MUST name your main R code main.R.",
+      "class": "file",
+      "patterns": ["*.r", "*.R", "*.tar.gz", "*.tar.bz2"],
+      "optional": false
+    },
+    {
+      "name": "param_str",
+      "label": "Parameter String",
+      "help": "Optional parameter string. Multiple parameters should be delimited. Choice of delimiter is up to you.",
+      "class": "string",
+      "optional": true
+    },
+    {
+      "name": "prologue_shell",
+      "label": "Prologue shell file",
+      "help": "An optional shell file to load BEFORE executing R file. Useful for preprocessing data.",
+      "class": "file",
+      "patterns": ["*.sh"],
+      "optional": true
+    },
+    {
+      "name": "epilogue_shell",
+      "label": "Epilogue shell file",
+      "help": "An optional shell file to load AFTER executing R file. Useful for zipping up results. Remember, you can only output ONE file. If you have multiple result files, you MUST zip them up.",
+      "class": "file",
+      "patterns": ["*.sh"],
+      "optional": true
+    },
+    {
+      "name": "input_file1",
+      "label": "Input file 1",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "input_file2",
+      "label": "Input file 2",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "input_file3",
+      "label": "Input file 3",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "input_file4",
+      "label": "Input file 4",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "input_file5",
+      "label": "Input file 5",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "input_file6",
+      "label": "Input file 6",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "input_file7",
+      "label": "Input file 7",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "input_file8",
+      "label": "Input file 8",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "input_file9",
+      "label": "Input file 9",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "input_file10",
+      "label": "Input file 10",
+      "class": "file",
+      "patterns": ["*.*"],
+      "optional": true
+    },
+    {
+      "name": "debug",
+	  "label": "Debug output",
+	  "help": "Show debug information in command line mode. Set 0 to disable. The greater the number the more verbose the output.",
+      "class": "int",
+      "optional": true,
+      "default": 0
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "results",
+      "class": "file"
+    }
+  ],
+  "runSpec": {
+    "timeoutPolicy": {
+      "*": {
+        "days": 30
+      }
+    },
+    "systemRequirements": {
+      "main": {
+        "instanceType": "mem1_ssd1_x32"
+      }
+    },
+    "file": "src/execR.sh",
+    "release": "14.04",
+    "interpreter": "bash",
+    "distribution": "Ubuntu"
+  },
+  "details": {
+    "contactEmail": "robbyjo@gmail.com",
+    "upstreamVersion": "0.0.1",
+    "upstreamAuthor": "Roby Joehanes",
+    "upstreamUrl": "https://github.com/robbyjo/execR",
+    "upstreamLicenses": ["GPLv3"]
+  },
+  "access": {
+    "network": [
+      "*"
+    ]
+  },
+  "authorizedUsers" : [
+    "PUBLIC"
+  ]
+}
