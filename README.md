@@ -6,21 +6,21 @@
 This is a DNANexus app that allows execution of any R scripts without specifically constructing it according to DNANexus app convention.
 
 ## Basic Usage
-You need to enter in the main R file or tar ball. In case of a tar ball (either .tar.gz or .tar.bz2), it will be extracted to
-/data directory with its directory structure intact. It is assumed that your main R file will be /data/main.R, which will
+You need to enter in the main R file or tar ball. In case of a tar ball (either `.tar.gz` or `.tar.bz2`), it will be extracted to
+`/data` directory with its directory structure intact. It is assumed that your main R file will be `/data/main.R`, which will
 be the entry point of your program. You can package several other R codes into the tar ball that you can later source in your main code.
 Please be mindful of the directory structure of your tar ball.
 
-Output file: After execution of your R file, you will be allowed to output ONLY ONE file and it MUST be named /data/results.
-This /data/results will later be renamed to the desired file name as specified in the Output file box. If you need to output
+Output file: After execution of your R file, you will be allowed to output ONLY ONE file and it MUST be named `/data/results`.
+This `/data/results` will later be renamed to the desired file name as specified in the Output file box. If you need to output
 multiple files, you MUST zip them (or tar-ball them) into one in an epilogue script, which will be discussed in a latter section.
-The output file will be passed as --output_file parameter and its contents will always be /data/results
+The output file will be passed as --output_file parameter and its contents will always be `/data/results`.
 
 Input files: This app allows the specification of up to 10 input files. They are completely optional.
-Input files will be passed as --input_fileX with X ranging from 1 to 10. All input files will be copied into /data directory.
+Input files will be passed as --input_fileX with X ranging from 1 to 10. All input files will be copied into `/data` directory.
 
 Parameters: This app allows specification of parameters in a string. Multiple parameters are to be specified using a delimiter of your choice.
-Example: 2;15000000;20000000;skato
+Example: `2;15000000;20000000;skato`
 This would mean chromosome 2 region from 15000000 to 20000000, using method SKAT-O. The semantic is completely up to you.
 Parameters will be passed as --param_str and will be enclosed by single quotes.
 
@@ -29,11 +29,11 @@ that debug is disabled. Positive numbers mean increasing debug verbosity level. 
 Debug parameter will be passed as --debug   
 
 ## Prologue and epilogue shell scripts
-Occasionally you may need a prologue to pre-process your data files or installing required R packages (and their required libraries).
+Occasionally you may need a prologue to pre-process your data files or to install required R packages (and their required libraries).
 This app allows specification of prologue shell script. Please do remember that if you install any R packages or system libraries, they will be
-completely erased right after the app exits. So, they will need to be reinstalled in every run.
+completely erased right after the app exits. So, they will need to be reinstalled at every run.
 
-If you have multiple output files, you MUST zip them or tar ball them together into one file and you MUST name these files /data/results.
+If you have multiple output files, you MUST zip them or tar ball them together into one file and you MUST name these files `/data/results`.
 The epilogue shell script allows you to do this (or any closing work that requires shell). You do not need to uninstall any libraries since
 they will be erased after the app exits.
 
@@ -43,14 +43,14 @@ libraries or programs come preinstalled.
  
 ## Helper utility
 
-execR app has a utility script in /data/utils.R primarily for parameter parsing. To use in your R code, use the following:
+execR app has a utility script in `/data/utils.R` primarily for parameter parsing. To use in your R code, use the following:
 
 ```R
 source("/data/utils.R");
 args <- processArgs(commandArgs(trailingOnly=TRUE));
 ```
 
-Variable args will be a named vector containing all the parameters (if specified), such as args['param_str'].
+Variable args will be a named vector containing all the parameters (if specified), such as `args['param_str']`.
 
 Please be mindful that your source tar ball does not overwrite utils.R utility. If you do, then this functionality will be absent.
 
