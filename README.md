@@ -41,3 +41,12 @@ Please be mindful that cloud infrastructure is relatively bare bones. So, you ma
 libraries or programs come preinstalled.
 
  
+##Helper utility
+
+execR app has a utility script in /data/utils.R primarily for parameter parsing. To use in your R code, use the following:
+
+source("/data/utils.R");
+args <- processArgs(commandArgs(trailingOnly=TRUE));
+
+Variable args will be a list containing all the parameters (if specified), such as args$param_str.
+ 
