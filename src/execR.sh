@@ -39,7 +39,7 @@ main() {
 # Optional parameters
     if [[ "$param_str" != "" ]] ; then
         echo "Value of param_str: '$param_str'"
-        PARMS+=(--param_str="$param_str")
+        PARMS+=(--param_str="'$param_str'")
     fi
  
     if [[ "$debug" != "" ]] ; then
@@ -196,12 +196,10 @@ main() {
     fi
     chmod 700 /data/runme.sh
 
-    if [ $debug -gt 1 ] ; then
-       echo "The following script is going to be executed:"
-       echo "============================ Script begin ============================ "
-       cat /data/runme.sh
-       echo "============================= Script end ============================= "
-    fi
+    echo "The following script is going to be executed:"
+    echo "============================ Script begin ============================ "
+    cat /data/runme.sh
+    echo "============================= Script end ============================= "
 
     dx-docker run -v /data/:/data/ robbyjo/r-mkl-bioconductor:3.4.1 /bin/bash /data/runme.sh
 
