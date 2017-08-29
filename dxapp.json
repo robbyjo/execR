@@ -26,7 +26,7 @@
     {
       "name": "prologue_shell",
       "label": "Prologue shell file",
-      "help": "An optional shell file to load BEFORE executing R file. Useful for preprocessing data.",
+      "help": "An optional shell file to load BEFORE executing R file. Useful for preprocessing data or installing R packages.",
       "class": "file",
       "patterns": ["*.sh"],
       "optional": true
