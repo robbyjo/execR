@@ -77,12 +77,7 @@ processArgs <- function(args, show=TRUE) {
 	colnames(args) <- c("Parameter", "Value");
 	args[, 1] <- gsub("^-*", "", args[, 1]); # If option is prefixed by dashes, remove the dashes
 	if (show) {
-		x <- data.frame(args);
-		ff <- x[x[, 1] == "formula", 2];
-		x <- x[x[, 1] != "formula", ];
-		print(data.frame(x), row.names=FALSE);
-		cat(paste("formula =", ff), "\n");
-		rm(x, ff);
+		print(data.frame(data.frame(args)), row.names=FALSE);
 	}
 	rownames(args) <- args[, 1];
 	args <- args[, 2];
