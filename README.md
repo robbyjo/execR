@@ -22,7 +22,7 @@ Input files will be passed as --input_fileX with X ranging from 1 to 10. All inp
 Parameters: This app allows specification of parameters in a string. Multiple parameters are to be specified using a delimiter of your choice.
 Example: 2;15000000;20000000;skato
 This would mean chromosome 2 region from 15000000 to 20000000, using method SKAT-O. The semantic is completely up to you.
-Parameters will be passed as --param_str
+Parameters will be passed as --param_str and will be enclosed by single quotes.
 
 Debug parameter: This app allows specification of debug parameter of integer type. The number zero or less is usually assumed to mean
 that debug is disabled. Positive numbers mean increasing debug verbosity level. You can interpret the debug number any way you want.
