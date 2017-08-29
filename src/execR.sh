@@ -21,7 +21,7 @@
 
 # Do not forget to do this:
 # sudo chmod 666 /var/run/docker.sock
-# dx-docker add-to-applet robbyjo/r-mkl-bioconductor:3.4.1 assoctool
+# dx-docker add-to-applet robbyjo/r-mkl-bioconductor:3.4.1 execR
 
 main() {
     echo "Value of r_code: '$r_code'"
