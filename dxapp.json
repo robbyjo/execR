@@ -17,6 +17,12 @@
       "optional": false
     },
     {
+      "name": "output_file",
+      "label": "Output file name",
+      "class": "string",
+      "optional": false
+    },
+    {
       "name": "param_str",
       "label": "Parameter String",
       "help": "Optional parameter string. Multiple parameters should be delimited. Choice of delimiter is up to you.",
