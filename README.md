@@ -50,6 +50,8 @@ args <- processArgs(commandArgs(trailingOnly=TRUE));
 
 Variable args will be a named vector containing all the parameters (if specified), such as args['param_str'].
 
+Please be mindful that your source tar ball does not overwrite utils.R utility. If you do, then this functionality will be absent.
+
 
 ##Installed R packages
 
