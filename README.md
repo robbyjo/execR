@@ -49,4 +49,11 @@ source("/data/utils.R");
 args <- processArgs(commandArgs(trailingOnly=TRUE));
 
 Variable args will be a list containing all the parameters (if specified), such as args$param_str.
- 
+
+
+##Installed R packages
+
+For the available R packages, check here:
+https://hub.docker.com/r/robbyjo/r-mkl-bioconductor/
+
+
