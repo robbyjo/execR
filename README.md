@@ -17,7 +17,7 @@ multiple files, you MUST zip them (or tar-ball them) into one in an epilogue scr
 The output file will be passed as --output_file parameter and its contents will always be /data/results
 
 Input files: This app allows the specification of up to 10 input files. They are completely optional.
-Input files will be passed as --input_fileX with X ranging from 1 to 10.
+Input files will be passed as --input_fileX with X ranging from 1 to 10. All input files will be copied into /data directory.
 
 Parameters: This app allows specification of parameters in a string. Multiple parameters are to be specified using a delimiter of your choice.
 Example: 2;15000000;20000000;skato
