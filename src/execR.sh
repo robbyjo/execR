@@ -31,7 +31,7 @@ main() {
     r_code_file_name=`dx ls "$r_code"`
     echo "Real name of r_code file: $r_code_file_name"
     dx download "$r_code" -o "/data/${r_code_file_name}" &
-    PARMS+=(--r_code=/data/${r_code_file_name})
+    PARMS+=(--r_code=${r_code_file_name})
 
 # Required parameters
     PARMS+=(--output_file=/data/results)
@@ -180,7 +180,7 @@ main() {
         echo "$x" >> /data/runme.sh
         echo 'echo "Finished running prologue shell code"' >> /data/runme.sh
     fi
-    x="Rscript /data/exec.R ${PARMS[@]}"
+    x="Rscript /data/main.R ${PARMS[@]}"
     echo "echo \"$x\"" >> /data/runme.sh
     echo 'echo "Running code"' >> /data/runme.sh
     x="/usr/bin/Rscript --vanilla /data/main.R ${PARMS[@]}"
